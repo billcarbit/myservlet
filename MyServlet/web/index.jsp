@@ -1,20 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2017/12/30
-  Time: 10:51
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>11111111</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>文件上传实例 - 菜鸟教程</title>
 </head>
 <body>
- 
-<form action="MyFirstServlet"  method="post" enctype="application/x-www-form-urlencoded">  
-    <input type="submit"  value="post方式"/>  
+<h1>文件上传实例 - 菜鸟教程</h1>
+<form method="post" action="/uploadFile" enctype="multipart/form-data">
+        选择一个文件:
+        <input type="file" name="uploadFile"/>
+        <br/><br/>
+        <input type="submit" value="上传"/>
 </form>
-
 </body>
 </html>
