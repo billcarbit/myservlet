@@ -1,6 +1,8 @@
 package com;
 
 
+import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 @WebServlet(name = "MyFirstServlet", urlPatterns = {"/MyFirstServlet"})
 public class MyFirstServlet extends HttpServlet {
@@ -31,10 +34,19 @@ public class MyFirstServlet extends HttpServlet {
         } finally {
             out.close();
         }*/
+        doPost(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        JSONObject json=JsonReader.receivePost(request);
+        System.out.println(json);
+
+        String loginName = request.getParameter("loginName");
+        String password = request.getParameter("password");
+        System.out.println("F="+loginName);
+        System.out.println("password="+password);
+
         responseJson(response);
     }
 
